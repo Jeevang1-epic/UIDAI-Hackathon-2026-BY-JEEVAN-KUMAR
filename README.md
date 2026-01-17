@@ -11,14 +11,15 @@
 
 ## 📋 Table of Contents
 - [🚩 Problem Statement](#-problem-statement)
-- [💡 Our Solution](#-our-solution)
+- [💡 Proposed Solution](#-proposed-solution)
 - [🕵️ Key Investigation: The "Ghost Center" Discovery](#-key-investigation-the-ghost-center-discovery)
+- [✊ Real-World Impact](#-real-world-impact)
 - [🛠️ Tech Stack](#-tech-stack)
 - [🚀 Live Demo & Screenshots](#-live-demo--screenshots)
 - [💻 Installation & Setup](#-installation--setup)
 - [📊 Algorithmic Logic](#-algorithmic-logic)
 - [🔮 Future Roadmap](#-future-roadmap)
-- [👨‍💻 Team](#-team)
+- [👨‍💻 Author](#-author)
 
 ---
 
@@ -34,8 +35,8 @@ These rogue operators:
 
 ---
 
-## 💡 Our Solution
-We built the **UIDAI Operational Intelligence Center**—a real-time, AI-driven dashboard that ingests Enrolment, Biometric, and Demographic data to flag anomalies instantly.
+## 💡 Proposed Solution
+I have developed the **UIDAI Operational Intelligence Center**—a real-time, AI-driven dashboard that ingests Enrolment, Biometric, and Demographic data to flag anomalies instantly.
 
 ### Key Features:
 * **📍 Geospatial Heatmaps:** Instantly visualize "Hot Zones" of suspicious activity on an interactive map.
@@ -45,7 +46,7 @@ We built the **UIDAI Operational Intelligence Center**—a real-time, AI-driven 
 ---
 
 ## 🕵️ Key Investigation: The "Ghost Center" Discovery
-During our analysis for the UIDAI Hackathon 2026, our algorithm flagged a massive anomaly in **South West Delhi**.
+During my analysis for the UIDAI Hackathon 2026, the algorithm flagged a massive anomaly in **South West Delhi**.
 
 | Metric | Normal Center | **⚠️ Pincode 110086 (Identified Anomaly)** |
 | :--- | :--- | :--- |
@@ -53,7 +54,13 @@ During our analysis for the UIDAI Hackathon 2026, our algorithm flagged a massiv
 | **New Enrolments** | ~50 - 200 / month | **0 (Zero)** |
 | **Suspicion Score** | < 10.0 | **7,625.0 (Critical Risk)** |
 
-> **Impact:** This single finding prevents thousands of potential fraudulent identity updates.
+---
+
+## ✊ Real-World Impact
+This is not just a theoretical project. I have formally reported this specific anomaly to UIDAI officials for immediate investigation.
+
+* **Official Case ID 1:** `SRN-S2054469731000`
+* **Official Case ID 2:** `SRN-S2019698585000`
 
 ---
 
@@ -70,15 +77,14 @@ This project was built using a high-performance Data Science stack:
 
 ### [🟢 Click Here to View Live Dashboard](https://uidai-hackathon-2026-by-jeevan-kumar-qmgthsawuappb5rv9nqxjcj.streamlit.app)
 
-*(Note: To fix the broken images below, create a folder named 'screenshots' in your GitHub repo and upload your images 'dashboard_view.png' and 'map_view.png' inside it.)*
-
 #### 1. The Operational Dashboard
-check screenshots folder
+Check screenshots folder
 *Real-time metrics showing total updates vs. enrolments.*
 
 #### 2. The "Ghost Center" Detection (Map View)
-check screenshots folder
+Check screenshots folder
 *Red dots indicate high-risk pincodes with massive updates but zero enrolments.*
+
 
 ---
 
@@ -93,20 +99,19 @@ cd UIDAI-Hackathon-2026-BY-JEEVAN-KUMAR
 pip install -r requirements.txt
 
 3. Generate the Data
-(We use a synthetic data generator to mimic the UIDAI dataset structure for privacy)
+(I use a synthetic data generator to mimic the UIDAI dataset structure for privacy)
 python data_setup.py
 
 4. Run the Dashboard
 streamlit run dashboard.py
 
 ## 📊 Algorithmic Logic
-We define a **Suspicion Score ($S$)** for every location ($L$) to normalize fraud risk:
+I define a Suspicion Score S for every location L to normalize fraud risk:
+S_L = Total Biometric Updates/Total New Enrolments + 1
 
-$$S_L = \frac{\text{Total Biometric Updates}}{\text{Total New Enrolments} + 1}$$
-
-* **If $S < 10$:** Normal Operation (Balanced mix of services).
-* **If $S > 100$:** High Risk (Investigation recommended).
-* **If $S > 1000$:** **CRITICAL ANOMALY** (Immediate suspension recommended).
+* **If S < 10:** Normal Operation (Balanced mix of services).
+* **If S > 100:** High Risk (Investigation recommended).
+* **If S > 1000:** **CRITICAL ANOMALY** (Immediate suspension recommended).
 
 
 ## 🔮 Future Roadmap
