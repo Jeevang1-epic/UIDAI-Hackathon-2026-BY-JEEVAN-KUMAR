@@ -73,11 +73,11 @@ This project was built using a high-performance Data Science stack:
 *(Note: To fix the broken images below, create a folder named 'screenshots' in your GitHub repo and upload your images 'dashboard_view.png' and 'map_view.png' inside it.)*
 
 #### 1. The Operational Dashboard
-![Dashboard Home](https://raw.githubusercontent.com/Jeevang1-epic/UIDAI-Hackathon-2026-BY-JEEVAN-KUMAR/main/screenshots/dashboard_view.png)
+check screenshots folder
 *Real-time metrics showing total updates vs. enrolments.*
 
 #### 2. The "Ghost Center" Detection (Map View)
-![Map View](https://raw.githubusercontent.com/Jeevang1-epic/UIDAI-Hackathon-2026-BY-JEEVAN-KUMAR/main/screenshots/map_view.png)
+check screenshots folder
 *Red dots indicate high-risk pincodes with massive updates but zero enrolments.*
 
 ---
