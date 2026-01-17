@@ -1,6 +1,6 @@
 # 🇮🇳 UIDAI Operational Intelligence Center (Project: Ghost-Buster)
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://uidai-hackathon-jeevan.streamlit.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://uidai-hackathon-2026-by-jeevan-kumar-qmgthsawuappb5rv9nqxjcj.streamlit.app)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Status](https://img.shields.io/badge/Status-Hackathon%20Submission-success)]()
@@ -68,14 +68,16 @@ This project was built using a high-performance Data Science stack:
 
 ## 🚀 Live Demo & Screenshots
 
-### [🟢 Click Here to View Live Dashboard](https://uidai-hackathon-jeevan.streamlit.app)
+### [🟢 Click Here to View Live Dashboard](https://uidai-hackathon-2026-by-jeevan-kumar-qmgthsawuappb5rv9nqxjcj.streamlit.app)
+
+*(Note: To fix the broken images below, create a folder named 'screenshots' in your GitHub repo and upload your images 'dashboard_view.png' and 'map_view.png' inside it.)*
 
 #### 1. The Operational Dashboard
-![Dashboard Home](https://raw.githubusercontent.com/Jeevang1-epic/UIDAI-Hackathon-2026/main/screenshots/dashboard_view.png)
+![Dashboard Home](https://raw.githubusercontent.com/Jeevang1-epic/UIDAI-Hackathon-2026-BY-JEEVAN-KUMAR/main/screenshots/dashboard_view.png)
 *Real-time metrics showing total updates vs. enrolments.*
 
 #### 2. The "Ghost Center" Detection (Map View)
-![Map View](https://raw.githubusercontent.com/Jeevang1-epic/UIDAI-Hackathon-2026/main/screenshots/map_view.png)
+![Map View](https://raw.githubusercontent.com/Jeevang1-epic/UIDAI-Hackathon-2026-BY-JEEVAN-KUMAR/main/screenshots/map_view.png)
 *Red dots indicate high-risk pincodes with massive updates but zero enrolments.*
 
 ---
@@ -84,9 +86,8 @@ This project was built using a high-performance Data Science stack:
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/Jeevang1-epic/UIDAI-Hackathon-2026.git](https://github.com/Jeevang1-epic/UIDAI-Hackathon-2026.git)
-cd UIDAI-Hackathon-2026
----
+git clone [https://github.com/Jeevang1-epic/UIDAI-Hackathon-2026-BY-JEEVAN-KUMAR.git](https://github.com/Jeevang1-epic/UIDAI-Hackathon-2026-BY-JEEVAN-KUMAR.git)
+cd UIDAI-Hackathon-2026-BY-JEEVAN-KUMAR
 
 2. Install Dependencies
 pip install -r requirements.txt
@@ -106,6 +107,7 @@ $$S_L = \frac{\text{Total Biometric Updates}}{\text{Total New Enrolments} + 1}$$
 * **If $S < 10$:** Normal Operation (Balanced mix of services).
 * **If $S > 100$:** High Risk (Investigation recommended).
 * **If $S > 1000$:** **CRITICAL ANOMALY** (Immediate suspension recommended).
+
 
 ## 🔮 Future Roadmap
 * **Phase 1 (Current):** Statistical Rule-Based Detection.
