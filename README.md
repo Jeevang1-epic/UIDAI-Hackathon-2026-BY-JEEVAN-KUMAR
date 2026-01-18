@@ -1,6 +1,7 @@
 # 🇮🇳 UIDAI Operational Intelligence Center (Project: Ghost-Buster)
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://uidai-hackathon-2026-by-jeevan-kumar-qmgthsawuappb5rv9nqxjcj.streamlit.app)
+[![Watch the Video Demo](https://img.shields.io/badge/📺_Watch_Video_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/UYScKyTWv6M)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/release/python-390/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Status](https://img.shields.io/badge/Status-Hackathon%20Submission-success)]()
@@ -76,6 +77,16 @@ This project was built using a high-performance Data Science stack:
 ## 🚀 Live Demo & Screenshots
 
 ### [🟢 Click Here to View Live Dashboard](https://uidai-hackathon-2026-by-jeevan-kumar-qmgthsawuappb5rv9nqxjcj.streamlit.app)
+
+---
+
+## 🎥 Video Demonstration
+A complete walkthrough of the project, including the Problem Statement, Live Dashboard Demo, Scalability Test (on 2.9 Million Records), and Proof of Real-World Action (UIDAI Grievance Reporting).
+
+### **👇 Click the button below to watch on YouTube**
+[![Watch the Video Demo](https://img.shields.io/badge/📺_Watch_Video_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/UYScKyTWv6M)
+
+*(Duration: 2:05 minutes)*
 
 #### 1. The Operational Dashboard
 Check screenshots folder
