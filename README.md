@@ -10,21 +10,21 @@
 
 ---
 
-## 📋 Table of Contents
-- [🚩 Problem Statement](#-problem-statement)
-- [💡 Proposed Solution](#-proposed-solution)
-- [🕵️ Key Investigation: The "Ghost Center" Discovery](#-key-investigation-the-ghost-center-discovery)
-- [✊ Real-World Impact](#-real-world-impact)
-- [🛠️ Tech Stack](#-tech-stack)
-- [🚀 Live Demo & Screenshots](#-live-demo--screenshots)
-- [💻 Installation & Setup](#-installation--setup)
-- [📊 Algorithmic Logic](#-algorithmic-logic)
-- [🔮 Future Roadmap](#-future-roadmap)
-- [👨‍💻 Author](#-author)
+##Table of Contents
+- [Problem Statement](#-problem-statement)
+- [Proposed Solution](#-proposed-solution)
+- [Key Investigation: The "Ghost Center" Discovery](#-key-investigation-the-ghost-center-discovery)
+- [Real-World Impact](#-real-world-impact)
+- [Tech Stack](#-tech-stack)
+- [Live Demo & Screenshots](#-live-demo--screenshots)
+- [Installation & Setup](#-installation--setup)
+- [Algorithmic Logic](#-algorithmic-logic)
+- [Future Roadmap](#-future-roadmap)
+- [Author](#-author)
 
 ---
 
-## 🚩 Problem Statement
+##Problem Statement
 The Aadhaar ecosystem handles millions of transactions daily. While enrolment saturation is high, a critical vulnerability exists: **Fraudulent Enrolment Centers ("Ghost Centers").**
 
 These rogue operators:
@@ -36,17 +36,17 @@ These rogue operators:
 
 ---
 
-## 💡 Proposed Solution
+##Proposed Solution
 I have developed the **UIDAI Operational Intelligence Center**—a real-time, AI-driven dashboard that ingests Enrolment, Biometric, and Demographic data to flag anomalies instantly.
 
 ### Key Features:
-* **📍 Geospatial Heatmaps:** Instantly visualize "Hot Zones" of suspicious activity on an interactive map.
-* **🚨 The "Suspicion Score":** A custom statistical metric that ranks every Pincode in India by fraud probability.
-* **📉 Trend Analysis:** Compare "Healthy" vs. "Anomalous" center behavior over time.
+* ** Geospatial Heatmaps:** Instantly visualize "Hot Zones" of suspicious activity on an interactive map.
+* ** The "Suspicion Score":** A custom statistical metric that ranks every Pincode in India by fraud probability.
+* ** Trend Analysis:** Compare "Healthy" vs. "Anomalous" center behavior over time.
 
 ---
 
-## 🕵️ Key Investigation: The "Ghost Center" Discovery
+##  Key Investigation: The "Ghost Center" Discovery
 During my analysis for the UIDAI Hackathon 2026, the algorithm flagged a massive anomaly in **South West Delhi**.
 
 | Metric | Normal Center | **⚠️ Pincode 110086 (Identified Anomaly)** |
@@ -57,7 +57,7 @@ During my analysis for the UIDAI Hackathon 2026, the algorithm flagged a massive
 
 ---
 
-## ✊ Real-World Impact
+## Real-World Impact
 This is not just a theoretical project. I have formally reported this specific anomaly to UIDAI officials for immediate investigation.
 
 * **Official Case ID 1:** `SRN-S2054469731000`
@@ -65,7 +65,7 @@ This is not just a theoretical project. I have formally reported this specific a
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 This project was built using a high-performance Data Science stack:
 * **Frontend:** [Streamlit](https://streamlit.io/) (for rapid, interactive dashboarding)
 * **Data Processing:** [Pandas](https://pandas.pydata.org/) (Data merging & aggregation)
@@ -74,9 +74,9 @@ This project was built using a high-performance Data Science stack:
 
 ---
 
-## 🚀 Live Demo & Screenshots
+## Live Demo & Screenshots
 
-### [🟢 Click Here to View Live Dashboard](https://uidai-hackathon-2026-by-jeevan-kumar-qmgthsawuappb5rv9nqxjcj.streamlit.app)
+### [ Click Here to View Live Dashboard](https://uidai-hackathon-2026-by-jeevan-kumar-qmgthsawuappb5rv9nqxjcj.streamlit.app)
 
 ---
 
@@ -99,10 +99,10 @@ Check screenshots folder
 
 ---
 
-## 💻 Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the Repository
-```bash
+
 git clone [https://github.com/Jeevang1-epic/UIDAI-Hackathon-2026-BY-JEEVAN-KUMAR.git](https://github.com/Jeevang1-epic/UIDAI-Hackathon-2026-BY-JEEVAN-KUMAR.git)
 cd UIDAI-Hackathon-2026-BY-JEEVAN-KUMAR
 
@@ -116,7 +116,7 @@ python data_setup.py
 4. Run the Dashboard
 streamlit run dashboard.py
 
-## 📊 Algorithmic Logic
+## Algorithmic Logic
 I define a Suspicion Score S for every location L to normalize fraud risk:
 S_L = Total Biometric Updates/Total New Enrolments + 1
 
@@ -125,14 +125,14 @@ S_L = Total Biometric Updates/Total New Enrolments + 1
 * **If S > 1000:** **CRITICAL ANOMALY** (Immediate suspension recommended).
 
 
-## 🔮 Future Roadmap
+## Future Roadmap
 * **Phase 1 (Current):** Statistical Rule-Based Detection.
 * **Phase 2:** Integration of **Unsupervised Machine Learning (Isolation Forests)** to detect subtler fraud patterns.
 * **Phase 3:** Real-time API integration with UIDAI's live server for T+0 detection.
 
 ---
 
-## 👨‍💻 Team
+## Team
 **Team ID:** UIDAI_11980
 * **Jeevan Kumar** - *Lead Developer & Data Analyst*
 
