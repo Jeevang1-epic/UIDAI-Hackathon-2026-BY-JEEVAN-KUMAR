@@ -62,7 +62,7 @@ with st.spinner("Loading Secure Data Pipeline..."):
     geo_df = load_lat_long()
 
 
-st.sidebar.header("🔍 Filter Intel")
+st.sidebar.header("Filter Intel")
 selected_state = st.sidebar.selectbox("Select State", ["All"] + sorted(df['state'].unique().tolist()))
 
 if selected_state != "All":
@@ -70,7 +70,7 @@ if selected_state != "All":
 else:
     filtered_df = df
 
-selected_metric = st.sidebar.radio("View Mode", ["⚠️ Fraud/Anomalies", "👶 Child Enrolment Trends"])
+selected_metric = st.sidebar.radio("View Mode", [" Fraud/Anomalies", " Child Enrolment Trends"])
 
 
 c1, c2, c3, c4 = st.columns(4)
@@ -83,7 +83,7 @@ c4.metric("High Risk Pincodes", f"{high_risk_count}", delta="Action Required", d
 st.markdown("---")
 
 # MAIN VISUALIZATION 
-st.subheader("📍 Geospatial Anomaly Heatmap")
+st.subheader(" Geospatial Anomaly Heatmap")
 
 if geo_df is not None:
 
@@ -97,7 +97,7 @@ if geo_df is not None:
 
     map_data = pd.merge(map_data, geo_df, on='pincode', how='inner')
     
-    if selected_metric == "⚠️ Fraud/Anomalies":
+    if selected_metric == " Fraud/Anomalies":
         fig_map = px.scatter_mapbox(
             map_data[map_data['suspicion_score'] > 2], # Threshold filter
             lat="lat", lon="lon",
@@ -134,18 +134,19 @@ else:
 c_left, c_right = st.columns(2)
 
 with c_left:
-    st.subheader("📊 Top 10 Anomalous Districts")
+    st.subheader(" Top 10 Anomalous Districts")
     top_districts = filtered_df.groupby('district')['suspicion_score'].mean().sort_values(ascending=False).head(10)
     fig_bar = px.bar(top_districts, orientation='h', title="Avg Suspicion Score by District", color=top_districts.values, color_continuous_scale='Reds')
     st.plotly_chart(fig_bar, use_container_width=True)
 
 with c_right:
-    st.subheader("📈 Trend Over Time")
+    st.subheader(" Trend Over Time")
     daily_trend = filtered_df.groupby('date')[['bio_update_adult', 'enrol_18_plus']].sum().reset_index()
     fig_line = px.line(daily_trend, x='date', y=['bio_update_adult', 'enrol_18_plus'], title="Updates vs Enrolments Timeline")
     st.plotly_chart(fig_line, use_container_width=True)
 
-st.subheader("📋 Top Priority Investigation List")
+st.subheader(" Top Priority Investigation List")
 suspicious_list = filtered_df.sort_values(by='suspicion_score', ascending=False).head(50)
 
 st.dataframe(suspicious_list[['date', 'state', 'district', 'pincode', 'bio_update_adult', 'enrol_18_plus', 'suspicion_score']])
+
