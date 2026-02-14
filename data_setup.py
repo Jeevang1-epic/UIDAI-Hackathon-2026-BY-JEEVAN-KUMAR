@@ -53,5 +53,6 @@ print(suspicious_pincodes[['state', 'pincode', 'date', 'suspicion_score']])
 
 df.to_csv("master_data.csv", index=False)
 
-print("✅ master_data.csv saved successfully!") #added moji for good looking ui(we can windows + "." to use emojis or extentions in VS code)
+print("master_data.csv saved successfully!") 
+
 
