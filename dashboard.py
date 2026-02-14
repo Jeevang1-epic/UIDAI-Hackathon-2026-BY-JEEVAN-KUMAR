@@ -16,7 +16,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("### 🕵️ Anomaly Detection & Predictive Resource Allocation")
+st.markdown("### 🕵️ Anomaly Detection & Predictive Resource Allocation")#added emoji for good looking ui(we can windows + "." to use emojis or extentions in VS code)
 st.markdown("---")
 
 @st.cache_data
@@ -25,7 +25,7 @@ def load_data():
     try:
         df = pd.read_csv("master_data.csv")
     except FileNotFoundError:
-        st.error("⚠️ 'master_data.csv' not found! Please run data_setup.py first.")
+        st.error("⚠️ 'master_data.csv' not found! Please run data_setup.py first.") #added moji for good looking ui(we can windows + "." to use emojis or extentions in VS code)
         st.stop()
 
     
@@ -149,4 +149,5 @@ st.subheader(" Top Priority Investigation List")
 suspicious_list = filtered_df.sort_values(by='suspicion_score', ascending=False).head(50)
 
 st.dataframe(suspicious_list[['date', 'state', 'district', 'pincode', 'bio_update_adult', 'enrol_18_plus', 'suspicion_score']])
+
 
