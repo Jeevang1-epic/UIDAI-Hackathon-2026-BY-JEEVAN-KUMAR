@@ -2,9 +2,15 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-st.set_page_config(page_title="UIDAI Intel Center", page_icon="🇮🇳", layout="wide")
+st.set_page_config(page_title="UIDAI Intel Center", page_icon="id-card.png", layout="wide")
 
-st.title("🇮🇳 UIDAI Operational Intelligence Center")
+st.markdown("""
+    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+        <img src="https://raw.githubusercontent.com/Jeevang1-epic/UIDAI-Hackathon-2026-BY-JEEVAN-KUMAR/main/id-card.png" style="width: 45px; margin-right: 15px; filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.8));">
+        <h1 style="margin: 0;">UIDAI Operational Intelligence Center</h1>
+    </div>
+""", unsafe_allow_html=True)
+
 st.markdown("""
 <style>
     .metric-card {
@@ -21,46 +27,33 @@ st.markdown("---")
 
 @st.cache_data
 def load_data():
-
     try:
         df = pd.read_csv("master_data.csv")
     except FileNotFoundError:
         st.error("'master_data.csv' not found! Please run data_setup.py first.") 
         st.stop()
 
-    
     df['date'] = pd.to_datetime(df['date'])
-
-    
     df['pincode'] = df['pincode'].astype(str).str.split('.').str[0] 
-
-
-    
     df['suspicion_score'] = df['bio_update_adult'] / (df['enrol_18_plus'] + 1)
     
     return df
 
 @st.cache_data
 def load_lat_long():
-
     try:
         url = "https://raw.githubusercontent.com/workforce-data-initiative/India-Pincodes/master/India-Pincodes.csv"
         geo_df = pd.read_csv(url)
-
         geo_df = geo_df[['pincode', 'Latitude', 'Longitude', 'District']]
         geo_df.columns = ['pincode', 'lat', 'lon', 'geo_district']
-        
         geo_df['pincode'] = geo_df['pincode'].astype(str)
         return geo_df
     except Exception as e:
-
         return None
-
 
 with st.spinner("Loading Secure Data Pipeline..."):
     df = load_data()
     geo_df = load_lat_long()
-
 
 st.sidebar.header("Filter Intel")
 selected_state = st.sidebar.selectbox("Select State", ["All"] + sorted(df['state'].unique().tolist()))
@@ -72,7 +65,6 @@ else:
 
 selected_metric = st.sidebar.radio("View Mode", [" Fraud/Anomalies", " Child Enrolment Trends"])
 
-
 c1, c2, c3, c4 = st.columns(4)
 c1.metric("Total Records Processed", f"{len(filtered_df):,}")
 c2.metric("Total Biometric Updates", f"{filtered_df['bio_update_adult'].sum():,}")
@@ -82,11 +74,9 @@ c4.metric("High Risk Pincodes", f"{high_risk_count}", delta="Action Required", d
 
 st.markdown("---")
 
-# MAIN VISUALIZATION 
 st.subheader(" Geospatial Anomaly Heatmap")
 
 if geo_df is not None:
-
     map_data = filtered_df.groupby('pincode').agg({
         'suspicion_score': 'max',
         'bio_update_adult': 'sum',
@@ -94,12 +84,11 @@ if geo_df is not None:
         'district': 'first'
     }).reset_index()
     
-
     map_data = pd.merge(map_data, geo_df, on='pincode', how='inner')
     
     if selected_metric == " Fraud/Anomalies":
         fig_map = px.scatter_mapbox(
-            map_data[map_data['suspicion_score'] > 2], # Threshold filter
+            map_data[map_data['suspicion_score'] > 2], 
             lat="lat", lon="lon",
             color="suspicion_score",
             size="suspicion_score",
@@ -112,7 +101,6 @@ if geo_df is not None:
             title="High-Risk Centers (Updates exceeding Enrolments)"
         )
     else:
-
         fig_map = px.scatter_mapbox(
             map_data,
             lat="lat", lon="lon",
@@ -124,12 +112,9 @@ if geo_df is not None:
             title="Biometric Update Volume Centers"
         )
     
-
     st.plotly_chart(fig_map, use_container_width=True)
-
 else:
     st.warning(" Internet connection required to fetch Map Coordinates. Showing Charts only.")
-
 
 c_left, c_right = st.columns(2)
 
@@ -149,6 +134,3 @@ st.subheader(" Top Priority Investigation List")
 suspicious_list = filtered_df.sort_values(by='suspicion_score', ascending=False).head(50)
 
 st.dataframe(suspicious_list[['date', 'state', 'district', 'pincode', 'bio_update_adult', 'enrol_18_plus', 'suspicion_score']])
-
-
-
